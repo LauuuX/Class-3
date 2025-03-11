@@ -264,23 +264,18 @@ $$\mathbf{x(t) = \frac{3}{5} - \frac{3}{5} e^{-t} \cos(2t) - \frac{3}{5} e^{-t} 
 
 # 3. Solución de la ecuación diferencial
 
-$$
-\frac{dy}{dt} = 5 - 2y
-$$
+$$\frac{dy}{dt} = 5 - 2y$$
 
-Con condición inicial:
+- Con condición inicial:
 
-$$
-y(0) = 0
-$$
+$$y(0) = 0$$
 
 ## Solución Analítica
 
-La solución de la ecuación diferencial es:
+- La solución de la ecuación diferencial es:
 
-$$
-y(t) = \frac{5}{2} - \frac{1}{2} e^{-2t}
-$$
+$$y(t) = \frac{5}{2} - \frac{1}{2} e^{-2t}$$
+
 
 ### Código en MATLAB
 
@@ -295,8 +290,7 @@ sol = dsolve(eqn, cond1);
 % Mostrar la solución
 disp(sol);
 ```
-
-![Solución Analítica](image1.png)
+![Solución Analítica](![image](https://github.com/user-attachments/assets/7cadc408-846e-47c3-8cdb-787deb70e0a9)
 
 ## Solución Numérica en MATLAB
 
@@ -312,11 +306,10 @@ xlabel('Tiempo (t)');
 ylabel('Variable y(t)');
 title('Solución ecuación dy/dt=5-2y');
 ```
-
-![Solución Numérica](image2.png)
+![Simulación en Simulink](![image](https://github.com/user-attachments/assets/7d01243b-53f1-4c99-a9c3-dbadb9f11ed6)
 
 ## Simulación en Simulink
 
-Se ha implementado la ecuación diferencial en Simulink utilizando integradores y bloques matemáticos.
-
-![Simulación en Simulink](image3.png)
+- Se ha implementado la ecuación diferencial en Simulink utilizando integradores y bloques matemáticos.
+  
+![Solución Numérica](![image](https://github.com/user-attachments/assets/cc76969a-7e37-4de0-a7aa-2e632bb14e48)
