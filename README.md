@@ -81,18 +81,11 @@ $$f(t) = 2e^{-t} - e^{-2t}$$
 $$F(s) = \frac{s^2 + 2s + 3}{(s + 1)^3}$$
 
 - ## Cálculo de coeficiente
-$$b_3 = [(s + 1)^3 \frac{A(s)}{B(s)}]_{s=-1}$$
-$$= (s^2 + 2s + 3)_{s=-1}$$
-$$= 2$$
+$$D_3 = [(s + 1)^3 \frac{A(s)}{B(s)}]_{s=-1} = (s^2 + 2s + 3)_{s=-1} = 2$$
 
-$$b_2 = \{\frac{d}{ds}[(s + 1)^3 \frac{A(s)}{B(s)}]\}_{s=-1}$$
-$$= [\frac{d}{ds}(s^2 + 2s + 3)]_{s=-1}$$
-$$= (2s + 2)_{s=-1}$$
-$$= 0$$
+$$D_2 = [\frac{d}{ds}[(s + 1)^3 \frac{A(s)}{B(s)}]]_{s=-1} = [\frac{d}{ds}(s^2 + 2s + 3)]_{s=-1} = (2s + 2)_{s=-1} = 0$$
 
-$$b_1 = \frac{1}{2!}[\frac{d^2}{ds^2}((s + 1)^3\frac{A(s)}{B(s)})]_{s=-1}$$
-$$= \frac{1}{2!}[\frac{d^2}{ds^2}(s^2 + 2s + 3)]_{s=-1}$$
-$$= \frac{1}{2}(2) = 1$$
+$$D_1 = \frac{1}{2!}[\frac{d^2}{ds^2}[(s + 1)^3\frac{A(s)}{B(s)}]]_{s=-1} = \frac{1}{2!}[\frac{d^2}{ds^2}(s^2 + 2s + 3)]_{s=-1} = \frac{1}{2}(2) = 1$$
 
 - ## Fórmula para transformada inversa
 $$t^n e^{at},\; n=1,2,3,\ldots \Rightarrow \frac{n!}{(s-a)^{n+1}}$$
@@ -290,8 +283,9 @@ sol = dsolve(eqn, cond1);
 % Mostrar la solución
 disp(sol);
 ```
-![Solución Analítica](![image](https://github.com/user-attachments/assets/7cadc408-846e-47c3-8cdb-787deb70e0a9)
+![Solución Analítica](https://github.com/user-attachments/assets/7cadc408-846e-47c3-8cdb-787deb70e0a9)
 
+Figura 2: Solucipon analítica
 ## Solución Numérica en MATLAB
 
 ```matlab
@@ -306,10 +300,87 @@ xlabel('Tiempo (t)');
 ylabel('Variable y(t)');
 title('Solución ecuación dy/dt=5-2y');
 ```
-![Simulación en Simulink](![image](https://github.com/user-attachments/assets/7d01243b-53f1-4c99-a9c3-dbadb9f11ed6)
+![Simulación en Simulink](https://github.com/user-attachments/assets/7d01243b-53f1-4c99-a9c3-dbadb9f11ed6)
+
+Figura 1: Simulik
 
 ## Simulación en Simulink
 
 - Se ha implementado la ecuación diferencial en Simulink utilizando integradores y bloques matemáticos.
   
-![Solución Numérica](![image](https://github.com/user-attachments/assets/cc76969a-7e37-4de0-a7aa-2e632bb14e48)
+![Solución Numérica](https://github.com/user-attachments/assets/cc76969a-7e37-4de0-a7aa-2e632bb14e48)
+
+Figura 3: Solución numérica
+## Ejecicios extras 
+### 💡 *Ejemplo 1:*
+#### Raíces Complejas Conjugadas
+
+$$ s^2 + 2s + 8 = (s + 1)^2 + 2^2 $$
+
+$$ 2s + 12 = -10 + 2(s + 1) $$
+
+$$ F(s) = \frac{-10 + 2(s+1)}{(s+1)^2 + 2^2} $$
+
+-  Separación en términos reconocibles
+
+$$ F(s) = \frac{-10}{(s+1)^2 + 2^2} + \frac{2(s+1)}{(s+1)^2 + 2^2} $$
+
+- Se usa las transformadas inversas conocidas:
+
+$$\( \mathcal{L}^{-1} \left[ \frac{b}{(s+a)^2 + b^2} \right] = e^{-at} \sin(bt) \)$$
+$$\( \mathcal{L}^{-1} \left[ \frac{s+a}{(s+a)^2 + b^2} \right] = e^{-at} \cos(bt) \)$$
+
+- Aplicamos a nuestra expresión:
+
+$$ f(t) = -10 e^{-t} \sin(2t) + 2 e^{-t} \cos(2t) $$
+
+
+### 💡 *Ejemplo 2:*
+#### Raíces reales y repetidas 
+
+$$f(s) = \frac{s^2 + 3s + 5}{(s+3)^3} = \frac{b_2}{(s+3)^3} + \frac{b_1}{(s+3)^2} + \frac{b_0}{(s+3)}$$
+
+$$f(s) = \frac{s^2 + 3s + 5}{(s+3)^3} \cdot (s+3)^3 |_{s=-3}$$
+
+$$f(s) = s^2 + 3s + 5|_{s=-3}$$
+
+$$f(-3) = (-3)^2 + 3(-3) + 5$$
+
+$$f(-3) = 9 - 9 + 5 = 5$$
+
+$$f(-3) = 5 - b_3$$
+
+- La segunda derivada para hallar $$b_2$$
+
+$$f(-3) = (2s + 3)$$
+
+$$f(-3) = (2(-3) + 3)$$
+
+$$f(-3) = -3 - b_2$$
+
+- Para hallar $$b_1$$
+
+$$\frac{d^2}{ds^2} (s^2 + 3s + 5)$$
+
+- Sustituyendo en la expresión de $$\( b_1\)$$:
+
+$$b_1 = \frac{1}{2!} \cdot (2) = \frac{1}{2} \cdot 2 = 1$$
+
+- Por lo tanto,
+  
+$$b_1 = 1$$
+
+$$5 \mathcal{L}^{-1} \left[ \frac{1}{(s+3)^3} \right]$$
+$$- 3 \mathcal{L}^{-1} \left[ \frac{1}{(s+3)^2} \right]$$
+$$+ \mathcal{L}^{-1} \left[ \frac{1}{(s+3)} \right]$$
+
+- Usando las fórmulas de transformada inversa:
+
+$$\mathcal{L}^{-1} \left[ \frac{1}{(s+a)^n} \right] = \frac{t^{n-1}}{(n-1)!} e^{-at}$$
+
+$$\mathcal{L}^{-1} \left[ \frac{1}{s+a} \right] = e^{-at}$$
+
+- Obtenemos:
+
+$$5 \frac{t^2}{2!} e^{-t} - 3 t e^{-3t} + e^{-3t}$$
+
