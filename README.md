@@ -83,9 +83,9 @@ $$F(s) = \frac{s^2 + 2s + 3}{(s + 1)^3}$$
 - ## Cálculo de coeficiente
 $$D_3 = [(s + 1)^3 \frac{A(s)}{B(s)}]_{s=-1} = (s^2 + 2s + 3)_{s=-1} = 2$$
 
-$$D_2 = [\frac{d}{ds}[(s + 1)^3 \frac{A(s)}{B(s)}]]_{s=-1} = [\frac{d}{ds}(s^2 + 2s + 3)]_{s=-1} = (2s + 2)_{s=-1} = 0$$
+$$D_2 = \frac{d}{ds} [(s + 1)^3 \frac{A(s)}{B(s)}]_{s=-1} = \frac{d}{ds} (s^2 + 2s + 3)_{s=-1} = (2s + 2)_{s=-1} = 0$$
 
-$$D_1 = \frac{1}{2!}[\frac{d^2}{ds^2}[(s + 1)^3\frac{A(s)}{B(s)}]]_{s=-1} = \frac{1}{2!}[\frac{d^2}{ds^2}(s^2 + 2s + 3)]_{s=-1} = \frac{1}{2}(2) = 1$$
+$$D_1 = \frac{1}{2!} \frac{d^2}{ds^2} [(s + 1)^3 \frac{A(s)}{B(s)}]_{s=-1} = \frac{1}{2!} \frac{d^2}{ds^2} (s^2 + 2s + 3)_{s=-1} = \frac{1}{2} (2) = 1$$
 
 - ## Fórmula para transformada inversa
 $$t^n e^{at},\; n=1,2,3,\ldots \Rightarrow \frac{n!}{(s-a)^{n+1}}$$
